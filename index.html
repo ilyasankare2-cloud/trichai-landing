@@ -277,6 +277,30 @@
     blockquote span{color:var(--green)}
     cite{font-size:13px;color:var(--muted);font-style:normal;letter-spacing:.5px}
 
+    /* ─── FAQ ─── */
+    .faq-list{display:flex;flex-direction:column;gap:8px;max-width:760px}
+    .faq-item{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:14px;padding:0;transition:border-color .2s;
+    }
+    .faq-item:hover{border-color:rgba(255,255,255,.1)}
+    .faq-item[open]{border-color:rgba(48,209,88,.2);background:rgba(48,209,88,.02)}
+    .faq-item summary{
+      cursor:pointer;padding:20px 24px;font-weight:600;font-size:16px;
+      letter-spacing:-.2px;list-style:none;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{
+      content:"+";font-size:22px;font-weight:300;color:var(--green);
+      transition:transform .2s;flex-shrink:0;
+    }
+    .faq-item[open] summary::after{content:"−"}
+    .faq-item p{
+      padding:0 24px 22px;color:var(--muted);font-size:15px;
+      line-height:1.6;letter-spacing:-.1px;
+    }
+
     /* ─── CTA ─── */
     .cta{
       text-align:center;padding:140px 24px;
@@ -338,9 +362,10 @@
   <div class="nav-links">
     <a href="#como-funciona">Cómo funciona</a>
     <a href="#funciones">Funciones</a>
-    <a href="#app">App móvil</a>
+    <a href="#para-quien">Para quién</a>
+    <a href="#faq">FAQ</a>
   </div>
-  <a href="https://phytolens-frontend.vercel.app" class="nav-cta" target="_blank">Analizar gratis</a>
+  <a href="https://trichai.vercel.app" class="nav-cta" target="_blank">Analizar gratis</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -349,21 +374,21 @@
 
   <div class="hero-eyebrow reveal">
     <div class="pulse"></div>
-    IA con 96% de precisión
+    Gratis · Sin registro · Sin login
   </div>
 
   <h1 class="reveal reveal-delay-1">
-    El cannabis,<br/>
-    visto por <span class="g">inteligencia<br/>artificial</span>
+    Sabe qué tienes<br/>
+    en la mano <span class="g">en 2<br/>segundos</span>.
   </h1>
 
   <p class="reveal reveal-delay-2">
-    Sube una foto. TrichAI analiza tipo, calidad, THC estimado,
-    efectos, aroma y variedades. En menos de dos segundos.
+    Sube una foto y TrichAI te dice tipo, calidad, THC estimado,
+    efectos esperados, aroma y variedades probables. Sin instalar nada.
   </p>
 
   <div class="hero-btns reveal reveal-delay-3">
-    <a href="https://phytolens-frontend.vercel.app" class="btn-green" target="_blank">Analizar ahora</a>
+    <a href="https://trichai.vercel.app" class="btn-green" target="_blank">Analizar ahora</a>
     <a href="#como-funciona" class="btn-ghost">Ver cómo funciona</a>
   </div>
 
@@ -409,16 +434,16 @@
 <div class="section-sm">
   <div class="stats-row reveal">
     <div class="stat">
-      <div class="stat-val">96%</div>
-      <div class="stat-label">Precisión del modelo</div>
+      <div class="stat-val">&lt;2s</div>
+      <div class="stat-label">Tiempo de análisis</div>
     </div>
     <div class="stat">
       <div class="stat-val">4</div>
       <div class="stat-label">Categorías detectadas</div>
     </div>
     <div class="stat">
-      <div class="stat-val">&lt;2s</div>
-      <div class="stat-label">Tiempo de análisis</div>
+      <div class="stat-val">10+</div>
+      <div class="stat-label">Datos por análisis</div>
     </div>
     <div class="stat">
       <div class="stat-val">0€</div>
@@ -463,9 +488,9 @@
 
     <div class="bento-card bento-accent span-8 reveal">
       <span class="icon">🧠</span>
-      <div class="bento-big-num">96%</div>
-      <h3>Precisión de clasificación</h3>
-      <p>El modelo EfficientNetV2-S entrenado con imágenes reales distingue cogollo seco, hachís, extractos y planta viva con una precisión del 96% en validación.</p>
+      <div class="bento-big-num" style="font-size:42px">EfficientNetV2-S</div>
+      <h3>IA real, no marketing</h3>
+      <p>Modelo entrenado con miles de imágenes reales. Distingue cogollo seco, hachís, extractos y planta viva con análisis visual cuantitativo: cobertura de tricomas, textura, nivel de curación.</p>
     </div>
 
     <div class="bento-card span-4 reveal reveal-delay-1">
@@ -525,6 +550,30 @@
   </div>
 </div>
 
+<!-- ─── CASOS DE USO ─── -->
+<div class="section" id="para-quien">
+  <div class="eyebrow reveal">Para quién</div>
+  <h2 class="reveal reveal-delay-1">Hecho para quien<br/>quiere saber qué consume.</h2>
+
+  <div class="bento" style="margin-top:48px">
+    <div class="bento-card span-4 reveal">
+      <span class="icon">🤔</span>
+      <h3>Consumidores curiosos</h3>
+      <p>Verifica si lo que te han pasado es lo que dicen. Confirma calidad antes de gastarte el dinero.</p>
+    </div>
+    <div class="bento-card span-4 reveal reveal-delay-1">
+      <span class="icon">🌱</span>
+      <h3>Cultivadores</h3>
+      <p>Estima el momento óptimo de cosecha. La cobertura de tricomas y textura te dan pistas visuales reales.</p>
+    </div>
+    <div class="bento-card span-4 reveal reveal-delay-2">
+      <span class="icon">🎓</span>
+      <h3>Aprendices</h3>
+      <p>Aprende a distinguir tipos, niveles de curación y calidad. La IA explica qué ve en cada foto.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ─── QUOTE ─── -->
 <div class="quote-section">
   <blockquote class="reveal">
@@ -560,6 +609,43 @@
   </div>
 </div>
 
+<!-- ─── FAQ ─── -->
+<div class="section" id="faq">
+  <div class="eyebrow reveal">Preguntas frecuentes</div>
+  <h2 class="reveal reveal-delay-1">Lo que la gente nos pregunta.</h2>
+
+  <div class="faq-list reveal" style="margin-top:48px">
+    <details class="faq-item">
+      <summary>¿Es realmente gratis?</summary>
+      <p>Sí, sin trampas. No pedimos registro, no hay versión premium, no hay anuncios. El proyecto es independiente.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Qué pasa con mis fotos?</summary>
+      <p>Las fotos se procesan en el servidor para hacer el análisis y no se almacenan. Solo se guardan si decides contribuirlas voluntariamente para mejorar la IA. El historial se queda en tu dispositivo, no en nuestro servidor.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo de preciso es?</summary>
+      <p>El modelo distingue 4 categorías principales (cogollo, hachís, extractos, planta viva) con buena precisión, pero no sustituye un análisis de laboratorio. El THC estimado es una aproximación basada en la categoría y calidad visual, no una medición real.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Funciona con cualquier foto?</summary>
+      <p>Funciona mejor con fotos nítidas, bien iluminadas y de cerca. Fotos borrosas, oscuras o desde lejos dan resultados menos fiables. Usa luz natural si puedes.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Detecta variedades concretas?</summary>
+      <p>No con certeza. El modelo no está entrenado para distinguir entre OG Kush y Amnesia Haze visualmente — eso requeriría análisis genético. Lo que muestra son variedades probables según el tipo y calidad detectada.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Está disponible en móvil?</summary>
+      <p>Sí. La web funciona perfectamente desde el móvil. Además hay app nativa para Android (próximamente en Play Store; mientras tanto disponible como APK directo).</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Es legal usarlo?</summary>
+      <p>TrichAI es solo una herramienta de análisis visual con IA, no facilita ni promueve la compra/venta. Su uso es legal en cualquier país. La legalidad de tener cannabis depende de la ley de cada país.</p>
+    </details>
+  </div>
+</div>
+
 <!-- ─── CTA ─── -->
 <div class="cta">
   <div style="max-width:980px;margin:0 auto;padding:0 24px">
@@ -571,7 +657,7 @@
       Abre la web, sube tu primera foto y obtén un análisis completo en menos de dos segundos.
     </p>
     <div style="text-align:center" class="reveal reveal-delay-3">
-      <a href="https://phytolens-frontend.vercel.app" class="btn-green" target="_blank" style="font-size:18px;padding:16px 36px">
+      <a href="https://trichai.vercel.app" class="btn-green" target="_blank" style="font-size:18px;padding:16px 36px">
         Analizar ahora →
       </a>
     </div>
@@ -583,9 +669,10 @@
   <div class="footer-logo">🔬 Trich<em>AI</em></div>
   <p>Uso responsable. Solo para usuarios mayores de edad según la legislación local de cada país.</p>
   <div class="footer-links">
-    <a href="https://phytolens-frontend.vercel.app" target="_blank">App web</a>
+    <a href="https://trichai.vercel.app" target="_blank">App web</a>
+    <a href="#faq">FAQ</a>
     <a href="mailto:ilyasankare2@gmail.com">Contacto</a>
-    <a href="#privacidad">Privacidad</a>
+    <a href="privacy.html">Privacidad</a>
   </div>
 </footer>
 
