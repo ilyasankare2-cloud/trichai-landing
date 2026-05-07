@@ -147,43 +147,74 @@
     }
     .btn-ghost:hover{background:rgba(255,255,255,.1);transform:scale(1.02)}
 
-    /* ─── MOCKUP ─── */
+    /* ─── PHONE MOCKUP ─── */
     .mockup-wrap{
-      width:100%;max-width:360px;margin:0 auto;
-      perspective:1200px;
+      width:100%;max-width:340px;margin:0 auto;
+      perspective:1400px;
     }
-    .mockup{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:28px;padding:24px;
+    .phone{
+      position:relative;
+      background:linear-gradient(180deg,#1c1c1e 0%,#0c0c0e 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:42px;padding:10px;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,.04),
-        0 60px 120px -20px rgba(0,0,0,.9),
-        0 0 80px -10px rgba(48,209,88,.08);
+        inset 0 0 0 1.5px rgba(255,255,255,.04),
+        inset 0 1px 1px rgba(255,255,255,.08),
+        0 60px 140px -30px rgba(0,0,0,.95),
+        0 0 100px -10px rgba(48,209,88,.1);
       animation:float 6s ease-in-out infinite;
     }
     @keyframes float{0%,100%{transform:translateY(0) rotateX(2deg)}50%{transform:translateY(-10px) rotateX(0deg)}}
-    .mock-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-    .mock-logo{font-size:14px;font-weight:800}
-    .mock-logo em{color:var(--green);font-style:normal}
-    .mock-pill{background:rgba(48,209,88,.12);border:1px solid rgba(48,209,88,.2);border-radius:980px;padding:3px 10px;font-size:11px;color:var(--green);font-weight:600}
-    .mock-img{
-      width:100%;height:170px;border-radius:14px;margin-bottom:16px;
-      background:linear-gradient(135deg,#0d1f0d 0%,#162516 50%,#0a1a0a 100%);
-      display:flex;align-items:center;justify-content:center;font-size:72px;
-      border:1px solid rgba(255,255,255,.04);
+    .phone-notch{
+      position:absolute;top:18px;left:50%;transform:translateX(-50%);
+      width:96px;height:26px;background:#000;border-radius:14px;z-index:5;
     }
-    .mock-card{border:1.5px solid var(--green);border-radius:16px;padding:16px;background:rgba(48,209,88,.03)}
-    .mock-card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-    .mock-card-label{font-size:17px;font-weight:800;color:var(--green);letter-spacing:-.3px}
-    .mock-card-conf{font-size:12px;color:var(--muted);margin-top:2px}
-    .mock-thc-row{display:flex;gap:8px;margin-bottom:12px}
-    .mock-thc{flex:1;background:#0a0a0a;border-radius:10px;padding:10px;text-align:center}
-    .mock-thc-label{font-size:10px;color:var(--dim);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px}
-    .mock-thc-val{font-size:24px;font-weight:800;color:var(--green)}
-    .mock-thc-val.grey{color:var(--muted);font-size:16px;padding-top:4px}
+    .phone-screen{
+      background:#000;border-radius:33px;overflow:hidden;
+      min-height:580px;position:relative;
+    }
+    .status-bar{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 26px 8px;color:#fff;font-size:14px;
+    }
+    .status-bar .time{font-weight:700;letter-spacing:-.3px}
+    .status-icons{display:flex;align-items:center;gap:5px;color:#fff}
+    .app-header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 18px 14px;
+    }
+    .app-logo{font-size:14px;font-weight:800;letter-spacing:-.3px}
+    .app-logo em{color:var(--green);font-style:normal}
+    .mock-pill{background:rgba(48,209,88,.12);border:1px solid rgba(48,209,88,.2);border-radius:980px;padding:3px 10px;font-size:10px;color:var(--green);font-weight:600;letter-spacing:.2px}
+
+    /* Bud SVG stage */
+    .bud-stage{position:relative;margin:0 18px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+    .bud-svg{display:block;width:100%;height:auto;aspect-ratio:360/220}
+    .bud-fade{position:absolute;left:0;right:0;bottom:0;height:50px;background:linear-gradient(transparent,#000);pointer-events:none}
+
+    /* Result card */
+    .result-card{margin:14px 18px 18px;padding:16px;background:#0a0a0a;border:1px solid rgba(48,209,88,.18);border-radius:16px}
+    .result-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:980px;font-size:12px;font-weight:700;color:var(--green);margin-bottom:14px}
+    .conf-big{font-size:48px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1}
+    .conf-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.2px}
+    .conf-bar{margin-top:10px;height:5px;background:#1a1a1a;border-radius:3px;overflow:hidden}
+    .conf-bar-fill{height:100%;background:var(--green);border-radius:3px}
+
+    .thc-row{display:flex;gap:8px;margin-top:14px}
+    .thc-card{flex:1;background:#111;border:1px solid rgba(255,255,255,.04);border-radius:10px;padding:10px 12px}
+    .thc-label{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+    .thc-val{font-size:22px;font-weight:800;letter-spacing:-.5px}
+    .thc-val.green{color:var(--green)}
+    .thc-val.grey{color:var(--muted);font-size:14px;padding-top:4px;font-weight:700}
+
+    .traits-label{font-size:9px;font-weight:700;color:#444;letter-spacing:1px;margin:14px 0 6px}
+    .traits-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+    .trait{background:#111;border-radius:8px;padding:8px 9px}
+    .trait-k{font-size:8px;color:#666;letter-spacing:.5px;margin-bottom:3px}
+    .trait-v{font-size:11px;color:#ccc;font-weight:700;letter-spacing:-.1px}
+
     .mock-badges{display:flex;flex-wrap:wrap;gap:5px}
-    .mock-badge{border:1px solid rgba(48,209,88,.3);border-radius:980px;padding:3px 10px;font-size:11px;color:var(--green)}
+    .mock-badge{border:1px solid rgba(48,209,88,.3);border-radius:980px;padding:3px 10px;font-size:10px;color:var(--green);font-weight:600}
 
     /* ─── DIVIDER ─── */
     .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 40px}
@@ -393,35 +424,195 @@
   </div>
 
   <div class="mockup-wrap reveal reveal-delay-3">
-    <div class="mockup">
-      <div class="mock-top">
-        <div class="mock-logo">🔬 Trich<em>AI</em></div>
-        <div class="mock-pill">En vivo</div>
-      </div>
-      <div class="mock-img">🌿</div>
-      <div class="mock-card">
-        <div class="mock-card-top">
-          <span style="font-size:32px">🌿</span>
-          <div>
-            <div class="mock-card-label">Cogollo seco</div>
-            <div class="mock-card-conf">Confianza: 94.7% · Calidad: Alta</div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="status-bar">
+          <span class="time">9:41</span>
+          <div class="status-icons">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor"><path d="M1 8.5h2v2H1zm4-2h2v4H5zm4-2h2v6H9zm4-3h2v9h-2z"/></svg>
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 .2C4.7.2 2.6 1 1 2.4l.7.8C3.2 1.9 5 1.2 7 1.2s3.8.7 5.3 2l.7-.8C11.4 1 9.3.2 7 .2zm0 2.5c-1.5 0-3 .6-4 1.5l.7.7C4.6 4.2 5.8 3.7 7 3.7s2.4.5 3.3 1.2l.7-.7c-1-.9-2.5-1.5-4-1.5zm0 2.5c-.9 0-1.7.3-2.4.9l.7.7c.5-.4 1.1-.6 1.7-.6s1.2.2 1.7.6l.7-.7c-.7-.6-1.5-.9-2.4-.9zm0 2.5c-.4 0-.7.2-.9.5L7 9.4l.9-1.2c-.2-.3-.5-.5-.9-.5z"/></svg>
+            <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x=".5" y=".5" width="18" height="9" rx="2" stroke="currentColor" opacity=".5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19" y="3.5" width="1.5" height="3" rx=".5" fill="currentColor" opacity=".5"/></svg>
           </div>
         </div>
-        <div class="mock-thc-row">
-          <div class="mock-thc">
-            <div class="mock-thc-label">THC estimado</div>
-            <div class="mock-thc-val">22%</div>
-          </div>
-          <div class="mock-thc">
-            <div class="mock-thc-label">CBD típico</div>
-            <div class="mock-thc-val grey">0.1–2%</div>
-          </div>
+
+        <div class="app-header">
+          <div class="app-logo">🔬 Trich<em>AI</em></div>
+          <div class="mock-pill">Análisis listo</div>
         </div>
-        <div class="mock-badges">
-          <span class="mock-badge">Euforia</span>
-          <span class="mock-badge">Relajación</span>
-          <span class="mock-badge">Creatividad</span>
-          <span class="mock-badge">OG Kush</span>
+
+        <!-- Cannabis bud illustration in SVG -->
+        <div class="bud-stage">
+          <svg class="bud-svg" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="bg" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" stop-color="#1a3a1a"/>
+                <stop offset="60%" stop-color="#0b1d0b"/>
+                <stop offset="100%" stop-color="#050d05"/>
+              </radialGradient>
+              <radialGradient id="budCore" cx="50%" cy="40%" r="55%">
+                <stop offset="0%" stop-color="#7fb069"/>
+                <stop offset="40%" stop-color="#4a7f3a"/>
+                <stop offset="80%" stop-color="#234d1c"/>
+                <stop offset="100%" stop-color="#0f2a0a"/>
+              </radialGradient>
+              <radialGradient id="budHighlight" cx="40%" cy="30%" r="40%">
+                <stop offset="0%" stop-color="#aed581" stop-opacity=".7"/>
+                <stop offset="100%" stop-color="#aed581" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="trichGlow" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity=".18"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="rough">
+                <feTurbulence baseFrequency=".9" numOctaves="2" seed="3"/>
+                <feColorMatrix values="0 0 0 0 .6  0 0 0 0 .8  0 0 0 0 .4  0 0 0 .15 0"/>
+                <feComposite in2="SourceGraphic" operator="in"/>
+              </filter>
+            </defs>
+
+            <!-- Background -->
+            <rect width="360" height="220" fill="url(#bg)"/>
+
+            <!-- Soft green glow behind bud -->
+            <ellipse cx="180" cy="115" rx="160" ry="85" fill="#4a7f3a" opacity=".25" filter="blur(20px)"/>
+
+            <!-- Bud silhouette: stack of organic calyces -->
+            <g transform="translate(180,118)">
+              <!-- outer calyces (back layer, darker) -->
+              <g opacity=".85">
+                <ellipse cx="-55" cy="-35" rx="22" ry="28" fill="#2c5b22" transform="rotate(-25 -55 -35)"/>
+                <ellipse cx="55"  cy="-35" rx="22" ry="28" fill="#2c5b22" transform="rotate(25 55 -35)"/>
+                <ellipse cx="-65" cy="10"  rx="24" ry="30" fill="#234d1c" transform="rotate(-15 -65 10)"/>
+                <ellipse cx="65"  cy="10"  rx="24" ry="30" fill="#234d1c" transform="rotate(15 65 10)"/>
+                <ellipse cx="-40" cy="40"  rx="20" ry="26" fill="#1d3f17" transform="rotate(-30 -40 40)"/>
+                <ellipse cx="40"  cy="40"  rx="20" ry="26" fill="#1d3f17" transform="rotate(30 40 40)"/>
+              </g>
+
+              <!-- mid layer -->
+              <g>
+                <ellipse cx="-30" cy="-50" rx="22" ry="30" fill="url(#budCore)" transform="rotate(-15 -30 -50)"/>
+                <ellipse cx="30"  cy="-50" rx="22" ry="30" fill="url(#budCore)" transform="rotate(15 30 -50)"/>
+                <ellipse cx="-45" cy="-15" rx="26" ry="32" fill="url(#budCore)" transform="rotate(-10 -45 -15)"/>
+                <ellipse cx="45"  cy="-15" rx="26" ry="32" fill="url(#budCore)" transform="rotate(10 45 -15)"/>
+                <ellipse cx="-20" cy="25"  rx="24" ry="30" fill="url(#budCore)" transform="rotate(-20 -20 25)"/>
+                <ellipse cx="20"  cy="25"  rx="24" ry="30" fill="url(#budCore)" transform="rotate(20 20 25)"/>
+                <ellipse cx="0"   cy="-65" rx="20" ry="26" fill="url(#budCore)"/>
+              </g>
+
+              <!-- center top calyces (brightest) -->
+              <g>
+                <ellipse cx="-12" cy="-40" rx="18" ry="24" fill="url(#budCore)" transform="rotate(-8 -12 -40)"/>
+                <ellipse cx="12"  cy="-40" rx="18" ry="24" fill="url(#budCore)" transform="rotate(8 12 -40)"/>
+                <ellipse cx="0"   cy="-15" rx="22" ry="28" fill="url(#budCore)"/>
+                <ellipse cx="0"   cy="20"  rx="20" ry="24" fill="url(#budCore)"/>
+              </g>
+
+              <!-- highlight on front-top -->
+              <ellipse cx="-5" cy="-30" rx="40" ry="50" fill="url(#budHighlight)"/>
+
+              <!-- Pistils (orange-red hairs) -->
+              <g stroke-linecap="round" fill="none">
+                <path d="M-8,-50 q-3,-8 -2,-18" stroke="#d97343" stroke-width="1.4" opacity=".85"/>
+                <path d="M5,-55 q4,-10 1,-20" stroke="#c25e2c" stroke-width="1.3" opacity=".85"/>
+                <path d="M-20,-30 q-6,-4 -10,-12" stroke="#b85428" stroke-width="1.3" opacity=".8"/>
+                <path d="M22,-32 q5,-3 11,-10" stroke="#d97343" stroke-width="1.4" opacity=".85"/>
+                <path d="M0,-25 q-2,-6 1,-14" stroke="#e08651" stroke-width="1.3" opacity=".9"/>
+                <path d="M-30,5 q-8,-3 -14,-3" stroke="#a04820" stroke-width="1.2" opacity=".75"/>
+                <path d="M32,8 q8,-2 14,-1" stroke="#c25e2c" stroke-width="1.3" opacity=".8"/>
+                <path d="M-15,30 q-3,8 -9,12" stroke="#b85428" stroke-width="1.2" opacity=".75"/>
+                <path d="M18,32 q4,7 11,11" stroke="#d97343" stroke-width="1.3" opacity=".8"/>
+                <path d="M-8,45 q-1,7 -5,12" stroke="#a04820" stroke-width="1.1" opacity=".7"/>
+                <path d="M6,-65 q1,-9 4,-15" stroke="#e08651" stroke-width="1.3" opacity=".85"/>
+              </g>
+
+              <!-- Trichome glow halo -->
+              <ellipse cx="0" cy="-10" rx="80" ry="65" fill="url(#trichGlow)"/>
+
+              <!-- Trichomes (white/silver dots — the "frost") -->
+              <g fill="#f0f5e8">
+                <circle cx="-30" cy="-55" r="1.1" opacity=".85"/>
+                <circle cx="-15" cy="-58" r="1" opacity=".9"/>
+                <circle cx="2"   cy="-62" r="1.2" opacity=".95"/>
+                <circle cx="18"  cy="-55" r="1" opacity=".85"/>
+                <circle cx="32"  cy="-50" r="1.1" opacity=".8"/>
+                <circle cx="-42" cy="-30" r="1" opacity=".85"/>
+                <circle cx="-25" cy="-32" r="1.3" opacity=".95"/>
+                <circle cx="-8"  cy="-35" r="1.1" opacity=".9"/>
+                <circle cx="10"  cy="-32" r="1.2" opacity=".95"/>
+                <circle cx="28"  cy="-30" r="1" opacity=".85"/>
+                <circle cx="42"  cy="-25" r="1.1" opacity=".8"/>
+                <circle cx="-50" cy="-5"  r="1.1" opacity=".85"/>
+                <circle cx="-32" cy="-8"  r="1.3" opacity=".95"/>
+                <circle cx="-12" cy="-5"  r="1.2" opacity=".95"/>
+                <circle cx="5"   cy="-2"  r="1.4" opacity="1"/>
+                <circle cx="22"  cy="-5"  r="1.2" opacity=".95"/>
+                <circle cx="40"  cy="-2"  r="1.1" opacity=".85"/>
+                <circle cx="-38" cy="20"  r="1.2" opacity=".9"/>
+                <circle cx="-18" cy="22"  r="1.1" opacity=".85"/>
+                <circle cx="0"   cy="25"  r="1.3" opacity=".95"/>
+                <circle cx="20"  cy="22"  r="1.1" opacity=".85"/>
+                <circle cx="38"  cy="25"  r="1.2" opacity=".9"/>
+                <circle cx="-25" cy="42"  r="1" opacity=".8"/>
+                <circle cx="-8"  cy="45"  r="1.1" opacity=".85"/>
+                <circle cx="12"  cy="44"  r="1.1" opacity=".85"/>
+                <circle cx="28"  cy="40"  r="1" opacity=".8"/>
+                <!-- tiny scattered -->
+                <circle cx="-46" cy="10"  r=".7" opacity=".7"/>
+                <circle cx="-22" cy="-20" r=".6" opacity=".6"/>
+                <circle cx="-2"  cy="-18" r=".7" opacity=".7"/>
+                <circle cx="15"  cy="-20" r=".6" opacity=".6"/>
+                <circle cx="33"  cy="-18" r=".7" opacity=".7"/>
+                <circle cx="-15" cy="10"  r=".6" opacity=".6"/>
+                <circle cx="8"   cy="12"  r=".7" opacity=".7"/>
+                <circle cx="25"  cy="10"  r=".6" opacity=".6"/>
+                <circle cx="-30" cy="35"  r=".6" opacity=".6"/>
+                <circle cx="0"   cy="-48" r=".7" opacity=".7"/>
+              </g>
+            </g>
+
+            <!-- subtle vignette -->
+            <rect width="360" height="220" fill="url(#bg)" opacity=".25" style="mix-blend-mode:multiply"/>
+          </svg>
+
+          <!-- gradient fade bottom of photo into card -->
+          <div class="bud-fade"></div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-pill" style="background:rgba(48,209,88,.12);border:1px solid rgba(48,209,88,.25)">
+            <span style="font-size:14px">🌿</span>
+            <span>Cogollo seco</span>
+          </div>
+
+          <div class="conf-big">94<span style="font-size:22px;color:#555">%</span></div>
+          <div class="conf-label">confianza del modelo</div>
+          <div class="conf-bar"><div class="conf-bar-fill" style="width:94%"></div></div>
+
+          <div class="thc-row">
+            <div class="thc-card">
+              <div class="thc-label">THC estimado</div>
+              <div class="thc-val green">22%</div>
+            </div>
+            <div class="thc-card">
+              <div class="thc-label">CBD típico</div>
+              <div class="thc-val grey">0.1–2%</div>
+            </div>
+          </div>
+
+          <div class="traits-label">RASGOS VISUALES</div>
+          <div class="traits-row">
+            <div class="trait"><div class="trait-k">TRICOMAS</div><div class="trait-v">Alta</div></div>
+            <div class="trait"><div class="trait-k">TEXTURA</div><div class="trait-v">Cristalina</div></div>
+            <div class="trait"><div class="trait-k">CURACIÓN</div><div class="trait-v">Bien curada</div></div>
+          </div>
+
+          <div class="traits-label">EFECTOS</div>
+          <div class="mock-badges">
+            <span class="mock-badge">Euforia</span>
+            <span class="mock-badge">Relajación</span>
+            <span class="mock-badge">Creatividad</span>
+          </div>
         </div>
       </div>
     </div>
