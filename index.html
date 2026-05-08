@@ -38,11 +38,18 @@
   }
   </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3FEPX4V80"></script>
+  <!-- Google Analytics — consent mode (GDPR) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: localStorage.getItem('trichai_cookie_consent') === 'accepted' ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      wait_for_update: 500,
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3FEPX4V80"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-W3FEPX4V80');
   </script>
@@ -862,7 +869,7 @@
   <div class="footer-links">
     <a href="https://phytolens-frontend.vercel.app" target="_blank">App web</a>
     <a href="#faq">FAQ</a>
-    <a href="mailto:ilyasankare2@gmail.com">Contacto</a>
+    <a href="mailto:trichaiphy@gmail.com?subject=Feedback%20TrichAI">Feedback</a>
     <a href="privacy.html">Privacidad</a>
     <a href="terms.html">Términos</a>
   </div>
