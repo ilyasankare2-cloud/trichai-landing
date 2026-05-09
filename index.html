@@ -38,6 +38,19 @@
   }
   </script>
 
+  <!-- Sentry — error tracking. Same project as web/mobile, distinguished by `platform` tag. -->
+  <script src="https://browser.sentry-cdn.com/8.55.0/bundle.tracing.min.js" crossorigin="anonymous"></script>
+  <script>
+    if (window.Sentry) {
+      Sentry.init({
+        dsn: 'https://302d9e10f04fa979d37c0c85477a45b7@o4511355214299136.ingest.de.sentry.io/4511355220721744',
+        tracesSampleRate: 0,
+        sendDefaultPii: false,
+        initialScope: { tags: { platform: 'landing' } },
+      });
+    }
+  </script>
+
   <!-- Google Analytics — consent mode (GDPR) -->
   <script>
     window.dataLayer = window.dataLayer || [];
