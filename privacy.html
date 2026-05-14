@@ -37,39 +37,50 @@
   <div class="date">Última actualización: mayo de 2026</div>
 
   <div class="highlight">
-    <p>TrichAI no requiere cuenta. No recopilamos ni almacenamos datos personales. Tu historial de análisis se guarda únicamente en tu dispositivo.</p>
+    <p>TrichAI no requiere cuenta. No te pedimos nombre, email ni datos personales directos. Tu historial de análisis se guarda únicamente en tu dispositivo. Sí usamos servicios técnicos (analítica, detección de errores) que pueden recibir datos como tu IP o información del dispositivo — abajo lo detallamos.</p>
   </div>
 
-  <h2>1. Información que recopilamos</h2>
-  <p>TrichAI <strong style="color:#f5f5f7">no recopila información personal identificable</strong>. No pedimos nombre, correo electrónico, número de teléfono ni ningún otro dato personal.</p>
+  <h2>1. Información que recopilamos directamente</h2>
+  <p>TrichAI <strong style="color:#f5f5f7">no pide ni almacena información personal identificable</strong> en nuestros servidores propios: no hay registro, ni nombre, ni correo, ni teléfono. Las únicas categorías de datos que nuestros servidores reciben directamente son: la imagen que decides analizar (procesada y descartada) y, si lo eliges expresamente, la imagen contribuida con su etiqueta.</p>
+  <p>Algunos servicios de terceros que utilizamos (sección 6) pueden recibir datos técnicos como IP, navegador o información del dispositivo. Esos servicios actúan según sus propias políticas.</p>
 
   <h2>2. Fotos e imágenes</h2>
-  <p>Cuando utilizas la función de análisis, la imagen se envía a nuestro servidor únicamente para procesar la inferencia del modelo de IA. <strong style="color:#f5f5f7">Las imágenes no se almacenan en nuestros servidores</strong> después del análisis.</p>
-  <p>Si decides usar la función "Contribuir foto", la imagen y la etiqueta que selecciones se guardan en nuestro servidor con el único propósito de mejorar el modelo de inteligencia artificial. Esta acción es completamente voluntaria.</p>
+  <p>Cuando utilizas la función <strong style="color:#f5f5f7">"Analizar"</strong>, la imagen se envía a nuestro servidor (alojado en Railway) únicamente para procesar la inferencia del modelo de IA. La imagen se procesa en memoria y no se escribe en disco; tras la respuesta, no conservamos copia.</p>
+  <p>Cuando utilizas la función <strong style="color:#f5f5f7">"Contribuir foto"</strong>, la imagen y la etiqueta que selecciones se guardan en almacenamiento de objetos (Cloudflare R2) con el único propósito de reentrenar y mejorar el modelo. Esta acción es voluntaria, requiere tu acción explícita en la app y las imágenes no se muestran públicamente ni se venden a terceros.</p>
 
   <h2>3. Historial local</h2>
   <p>El historial de análisis se almacena <strong style="color:#f5f5f7">únicamente en tu dispositivo</strong> usando AsyncStorage (app móvil) o localStorage (versión web). No tenemos acceso a este historial.</p>
 
-  <h2>4. Datos de uso</h2>
-  <p>Podemos recopilar datos de uso anónimos y agregados (número de análisis realizados, categorías más frecuentes) para mejorar el servicio. Estos datos no están vinculados a ningún usuario identificable.</p>
+  <h2>4. Datos de uso y analítica</h2>
+  <p>Usamos <strong style="color:#f5f5f7">Google Analytics</strong> para entender de forma agregada cómo se usa la web (páginas visitadas, número de análisis, dispositivo, país aproximado). GA puede instalar cookies en tu navegador; puedes rechazarlo desde el banner de cookies. Los datos enviados a Google incluyen tu IP truncada y datos de comportamiento.</p>
+  <p>Recopilamos también <strong style="color:#f5f5f7">métricas internas agregadas</strong> (total de análisis, distribución por categoría) en Upstash Redis, sin vincular a usuarios identificables.</p>
 
-  <h2>5. Servicios de terceros</h2>
+  <h2>5. Detección de errores</h2>
+  <p>Usamos <strong style="color:#f5f5f7">Sentry</strong> para detectar y diagnosticar errores en tiempo real. Sentry puede recibir información técnica del error (mensaje, traza de pila, navegador, sistema operativo, IP truncada). En la app móvil, Sentry puede grabar fragmentos visuales de la pantalla cuando ocurre un error (session replay) para reproducir el problema; estos fragmentos no contienen datos identificables intencionados y se conservan según la política de retención de Sentry.</p>
+
+  <h2>6. Servicios de terceros</h2>
+  <p>Los siguientes proveedores procesan datos en nuestro nombre o sirven la app:</p>
   <ul>
-    <li><strong style="color:#f5f5f7">Railway</strong> — aloja nuestro servidor backend. Consulta su política en railway.app</li>
-    <li><strong style="color:#f5f5f7">Vercel</strong> — aloja la versión web. Consulta su política en vercel.com</li>
-    <li><strong style="color:#f5f5f7">Expo / EAS</strong> — plataforma de distribución de la app móvil</li>
+    <li><strong style="color:#f5f5f7">Railway</strong> (USA/UE) — backend de inferencia. Política: railway.app</li>
+    <li><strong style="color:#f5f5f7">Vercel</strong> (USA/UE) — hosting de web y landing. Política: vercel.com</li>
+    <li><strong style="color:#f5f5f7">Cloudflare R2</strong> (red global) — almacenamiento de fotos contribuidas. Política: cloudflare.com</li>
+    <li><strong style="color:#f5f5f7">Upstash Redis</strong> (UE) — métricas agregadas y rate-limit. Política: upstash.com</li>
+    <li><strong style="color:#f5f5f7">Google Analytics</strong> (USA) — analítica web. Política: policies.google.com</li>
+    <li><strong style="color:#f5f5f7">Sentry</strong> (Alemania, UE) — detección de errores. Política: sentry.io/privacy</li>
+    <li><strong style="color:#f5f5f7">Expo / EAS</strong> (USA) — distribución y build de la app móvil. Política: expo.dev/privacy</li>
   </ul>
+  <p>Algunos proveedores pueden transferir datos fuera de la UE; aplicamos sus mecanismos contractuales estándar (SCC) para transferencias internacionales.</p>
 
-  <h2>6. Menores de edad</h2>
+  <h2>7. Menores de edad</h2>
   <p>TrichAI está dirigida exclusivamente a mayores de edad según la legislación local de cada país. No recopilamos intencionadamente datos de menores de edad.</p>
 
-  <h2>7. Seguridad</h2>
-  <p>Todas las comunicaciones entre la app y el servidor se realizan mediante HTTPS. Las imágenes enviadas para análisis se procesan en memoria y no se escriben en disco.</p>
+  <h2>8. Seguridad</h2>
+  <p>Todas las comunicaciones entre la app y el servidor se realizan mediante HTTPS.</p>
 
-  <h2>8. Cambios en esta política</h2>
+  <h2>9. Cambios en esta política</h2>
   <p>Podemos actualizar esta política ocasionalmente. Cualquier cambio se publicará en esta página con la fecha de actualización correspondiente.</p>
 
-  <h2>9. Contacto</h2>
+  <h2>10. Contacto</h2>
   <p>Para cualquier pregunta sobre esta política de privacidad, escríbenos a: <a href="mailto:trichaiphy@gmail.com">trichaiphy@gmail.com</a></p>
 </div>
 
